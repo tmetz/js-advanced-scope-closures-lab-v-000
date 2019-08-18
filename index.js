@@ -1,12 +1,13 @@
 function produceDrivingRange(range) {
   return function(beginSt, endSt) {
     let driveLength = parseInt(endSt.slice(0, -2)) - parseInt(beginSt.slice(0, -2));
-    console.log(driveLength);
+    let diff = Math.abs(range - driveLength);
     if (range - driveLength >= 0) {
-      return "within range by " + range - driveLength;
+      
+      return "within range by " + diff;
     }
     else {
-      return driveLength - range + " blocks out of range";
+      return diff + " blocks out of range";
     }
   };
 }
